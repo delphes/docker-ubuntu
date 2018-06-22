@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:14.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -9,12 +9,12 @@ RUN apt-get update \
     g++ \
     git \
     graphviz-dev \
-    libcfitsio-dev \
+    libcfitsio3-dev \
     libfftw3-dev \
     libftgl-dev \
     libglew-dev \
     libglu1-mesa-dev \
-    libgsl-dev \
+    libgsl0-dev \
     libjpeg-dev \
     libkrb5-dev \
     libldap2-dev \
@@ -40,7 +40,7 @@ RUN apt-get update \
     wget
 
 RUN mkdir -p /opt \
- && curl -sL https://root.cern.ch/download/root_v6.14.00.Linux-ubuntu18-x86_64-gcc7.3.tar.gz | tar -C /opt -zxf - \
+ && curl -sL https://root.cern.ch/download/root_v5.34.36.Linux-ubuntu14-x86_64-gcc4.8.tar.gz | tar -C /opt -zxf - \
  && curl -sL http://home.thep.lu.se/~torbjorn/pythia8/pythia8235.tgz | tar -C /opt -zxf - \
  && cd /opt/pythia8235 \
  && ./configure --prefix=/opt/pythia \
