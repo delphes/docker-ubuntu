@@ -41,12 +41,12 @@ RUN apt-get update \
 
 RUN mkdir -p /opt \
  && curl -sL https://root.cern.ch/download/root_v5.34.38.Linux-ubuntu14-x86_64-gcc4.8.tar.gz | tar -C /opt -zxf - \
- && curl -sL http://home.thep.lu.se/~torbjorn/pythia8/pythia8240.tgz | tar -C /opt -zxf - \
- && cd /opt/pythia8240 \
+ && curl -sL http://home.thep.lu.se/~torbjorn/pythia8/pythia8243.tgz | tar -C /opt -zxf - \
+ && cd /opt/pythia8243 \
  && ./configure --prefix=/opt/pythia \
  && make install \
  && cd - \
- && rm -rf /opt/pythia8240
+ && rm -rf /opt/pythia8243
 
 ENV ROOTSYS=/opt/root
 ENV PATH=$ROOTSYS/bin:$PATH
