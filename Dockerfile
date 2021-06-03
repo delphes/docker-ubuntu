@@ -39,7 +39,7 @@ RUN apt-get update \
 
 RUN mkdir -p /opt \
  && curl -sL https://root.cern/download/root_v6.24.00.Linux-ubuntu20-x86_64-gcc9.3.tar.gz | tar -C /opt -zxf - \
- && curl -sL http://home.thep.lu.se/~torbjorn/pythia8/pythia8305.tgz | tar -C /opt -zxf - \
+ && curl -sL https://pythia.org/download/pythia83/pythia8305.tgz | tar -C /opt -zxf - \
  && cd /opt/pythia8305 \
  && ./configure --prefix=/opt/pythia \
  && make install \
