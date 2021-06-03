@@ -40,16 +40,17 @@ RUN apt-get update \
     wget
 
 RUN mkdir -p /opt \
- && curl -sL https://root.cern.ch/download/root_v5.34.38.Linux-ubuntu14-x86_64-gcc4.8.tar.gz | tar -C /opt -zxf - \
- && curl -sL http://home.thep.lu.se/~torbjorn/pythia8/pythia8243.tgz | tar -C /opt -zxf - \
- && cd /opt/pythia8243 \
+ && curl -sL https://root.cern/download/root_v5.34.38.Linux-ubuntu14-x86_64-gcc4.8.tar.gz | tar -C /opt -zxf - \
+ && curl -sL http://home.thep.lu.se/~torbjorn/pythia8/pythia8305.tgz | tar -C /opt -zxf - \
+ && cd /opt/pythia8305 \
  && ./configure --prefix=/opt/pythia \
  && make install \
  && cd - \
- && rm -rf /opt/pythia8243
+ && rm -rf /opt/pythia8305
 
 ENV ROOTSYS=/opt/root
 ENV PATH=$ROOTSYS/bin:$PATH
 ENV PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
 ENV LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH
 ENV PYTHIA8=/opt/pythia
+ENV LD_LIBRARY_PATH=$PYTHIA8/lib:$LD_LIBRARY_PATH
