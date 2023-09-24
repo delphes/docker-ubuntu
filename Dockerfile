@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -32,19 +32,19 @@ RUN apt-get update \
     libxpm-dev \
     libxt-dev \
     make \
-    python-dev \
+    python3-dev \
     rsync \
     tcl \
     wget
 
 RUN mkdir -p /opt \
- && curl -sL https://root.cern/download/root_v6.24.00.Linux-ubuntu20-x86_64-gcc9.3.tar.gz | tar -C /opt -zxf - \
- && curl -sL https://pythia.org/download/pythia83/pythia8305.tgz | tar -C /opt -zxf - \
- && cd /opt/pythia8305 \
+ && curl -sL https://root.cern/download/root_v6.28.06.Linux-ubuntu22-x86_64-gcc11.4.tar.gz | tar -C /opt -zxf - \
+ && curl -sL https://pythia.org/download/pythia83/pythia8310.tgz | tar -C /opt -zxf - \
+ && cd /opt/pythia8310 \
  && ./configure --prefix=/opt/pythia \
  && make install \
  && cd - \
- && rm -rf /opt/pythia8305
+ && rm -rf /opt/pythia8310
 
 ENV ROOTSYS=/opt/root
 ENV PATH=$ROOTSYS/bin:$PATH
