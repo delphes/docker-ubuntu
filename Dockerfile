@@ -8,30 +8,12 @@ RUN apt-get update \
     curl \
     g++ \
     git \
-    graphviz-dev \
-    libcfitsio-dev \
-    libfftw3-dev \
     libftgl-dev \
+    libgif-dev \
+    libgl2ps-dev \
     libglew-dev \
-    libglu1-mesa-dev \
-    libgsl-dev \
-    libjpeg-dev \
-    libkrb5-dev \
-    libldap2-dev \
-    libmysqlclient-dev \
-    libpcre3-dev \
-    libpng-dev \
-    libssl-dev \
     libtbb-dev \
     libvdt-dev \
-    libx11-dev \
-    libxext-dev \
-    libxft-dev \
-    libxi-dev \
-    libxml2-dev \
-    libxmu-dev \
-    libxpm-dev \
-    libxt-dev \
     make \
     python3-dev \
     rsync \
