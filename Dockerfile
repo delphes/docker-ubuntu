@@ -21,13 +21,13 @@ RUN apt-get update \
     wget
 
 RUN mkdir -p /opt \
- && curl -sL https://root.cern/download/root_v6.34.04.Linux-ubuntu24.04-x86_64-gcc13.3.tar.gz | tar -C /opt -zxf - \
- && curl -sL https://pythia.org/download/pythia83/pythia8313.tgz | tar -C /opt -zxf - \
- && cd /opt/pythia8313 \
+ && curl -sL https://root.cern/download/root_v6.36.02.Linux-ubuntu24.04-x86_64-gcc13.3.tar.gz | tar -C /opt -zxf - \
+ && curl -sL https://pythia.org/download/pythia83/pythia8315.tgz | tar -C /opt -zxf - \
+ && cd /opt/pythia8315 \
  && ./configure --prefix=/opt/pythia \
  && make install \
  && cd - \
- && rm -rf /opt/pythia8313
+ && rm -rf /opt/pythia8315
 
 ENV ROOTSYS=/opt/root
 ENV PATH=$ROOTSYS/bin:$PATH
